@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Java Arrays Article</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+    <header>
+        <h1>Working with Arrays in Java</h1>
+    </header>
+
+    <section id="arrayDeclaration">
+        <h2>Array Declaration</h2>
+        <p>
+            An array in Java is a data structure that allows you to store multiple values of the same type.
+            Here's how you can declare a 1D and a 2D array in Java:
+        </p>
+
+        <pre>
+            <code class="java">
+                <h3>// 1D Array Declaration</h3>
+                int[] oneDimensionalArray = new int[5];
+
+                <h3>// 2D Array Declaration</h3>
+                int[][] twoDimensionalArray = new int[3][4];
+            </code>
+        </pre>
+    </section>
+
+    <section id="takingInput">
+        <h2>Taking Input Using Scanner Class</h2>
+        <p>
+            To take input in Java, you can use the Scanner class. Below is an example of how to take input for
+            1D and 2D arrays using the Scanner class:
+        </p>
+
+        <pre>
+            <code class="java">
+                import java.util.Scanner;
+
+                Scanner scanner = new Scanner(System.in);
+
+                <h3>// 1D Array Input</h3>
+                System.out.print("Enter the size of the array: ");
+                int size = scanner.nextInt();
+                int[] array = new int[size];
+
+                System.out.println("Enter the elements of the array:");
+                for (int i = 0; i < size; i++) {
+                    array[i] = scanner.nextInt();
+                }
+
+               <h3> // 2D Array Input</h3>
+                System.out.print("Enter the number of rows: ");
+                int rows = scanner.nextInt();
+                System.out.print("Enter the number of columns: ");
+                int columns = scanner.nextInt();
+                int[][] matrix = new int[rows][columns];
+
+                System.out.println("Enter the elements of the 2D array:");
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < columns; j++) {
+                        matrix[i][j] = scanner.nextInt();
+                    }
+                }
+
+                // Close the scanner
+                scanner.close();
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Taking Input Using  command line argument</h2>
+        <p>
+            To take input in Java, you can use the command line argument . Below is an example of how to take input for
+            1D and 2D arrays using the Scanner class:
+        </p>
+
+        <pre>
+            <code class="java">
+                <h3>//command line argument 1D</h3>
+                public class CommandLineArray1D {
+                    public static void main(String[] args) {
+                        if (args.length == 0) {
+                            System.out.println("Please provide array elements as command line arguments.");
+                            return;
+                        }
+                
+                        // Assuming all arguments are integers
+                        int[] array = new int[args.length];
+                
+                        // Parse and store elements in the array
+                        for (int i = 0; i < args.length; i++) {
+                            array[i] = Integer.parseInt(args[i]);
+                        }
+                
+                        // Display the elements of the array
+                        System.out.print("1D Array elements: ");
+                        for (int num : array) {
+                            System.out.print(num + " ");
+                        }
+                    }
+                }
+
+                
+                <h3>//command line argument 2D</h3>
+                public class CommandLineArray2D {
+                    public static void main(String[] args) {
+                        if (args.length == 0) {
+                            System.out.println("Please provide 2D array elements as command line arguments.");
+                            return;
+                        }
+                
+                        // Assuming all arguments are integers
+                        int rows = Integer.parseInt(args[0]);
+                        int columns = Integer.parseInt(args[1]);
+                
+                        // Check if the number of arguments matches the size of the 2D array
+                        if (args.length != 2 + rows * columns) {
+                            System.out.println("Invalid number of arguments for the 2D array.");
+                            return;
+                        }
+                
+                        int[][] matrix = new int[rows][columns];
+                
+                        // Parse and store elements in the 2D array
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < columns; j++) {
+                                matrix[i][j] = Integer.parseInt(args[2 + i * columns + j]);
+                            }
+                        }
+                
+                        // Display the elements of the 2D array
+                        System.out.println("2D Array elements:");
+                
+                        for (int i = 0; i < rows; i++) {
+                            for (int j = 0; j < columns; j++) {
+                                System.out.print(matrix[i][j] + " ");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                
+            </code>
+        </pre>
+    </section>
+
+    <section class="name">
+        <p>
+            <h2>Name of Group Members :</h2>
+            <br>
+            <br>1. Subhraneel Dhar - 2130085
+            <br>2. Sagnik Sarkar - 2130068
+            <br>3. Subham Mandal - 2130084
+            <br>4. Srinjoy Sahoo - 2130083
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
